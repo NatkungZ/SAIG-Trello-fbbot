@@ -5,6 +5,8 @@ ziko=100000154047359;
 nutsu=1732352289;
 thoth_id=346408618882754;
 leafbox_id=507626336072914;
+saig2015_id=120959611591789;
+saig2014_id=423408717818225;
 
 // --------api------------
 function bot_send_msg(api,msg,thread_id){
@@ -50,6 +52,10 @@ login({email: process.env.FB_LOGIN_EMAIL, password: process.env.FB_PASSWORD}, fu
         bot_send_msg(api,decodeURIComponent(request.url.substring(7)),thoth_id);
       else if(user=="leafbox")
         bot_send_msg(api,decodeURIComponent(request.url.substring(9)),leafbox_id);
+      else if(user=="saig2014")
+        bot_send_msg(api,decodeURIComponent(request.url.substring(10)),saig2014_id)
+      else if(user=="saig2015")
+        bot_send_msg(api,decodeURIComponent(request.url.substring(10)),saig2015_id)
     } catch(err) {
       console.log(err);
     }
